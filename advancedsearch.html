@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Advanced Search</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body style="justify-content: left; margin: 10px;">
+  
+  <div class="container">
+    <div class="links">
+      <a href="index.html">Google Search</a>
+    </div>
+    <div class="imgs">
+      <img  src="Google_Advanced_Search.jpg" alt="Google Advanced Search" width="200">
+   </div>
+  
+    
+    <div class="advanced-search-form" style="margin-bottom: 5px; ">
+      <h3 style="text-align:left;">Find pages with...</h3>
+    </div>
+
+    <div class="advanced-search-form"  style="margin-bottom: 200px;">
+      
+        <div class="label_input_wrapper">
+          <label style="margin-right:80px"     for="allWords" >all these words:</label>
+          <input class="advanced-search-form" type="text" id="allWords" >
+        </div> 
+        
+       
+        <div class="label_input_wrapper">   
+          <label style="margin-right: 10px"  for="exactPhrase">this exact word or phrase:</label>
+          <input class="advanced-search-form" type="text" id="exactPhrase">
+        </div> 
+        
+        <div class="label_input_wrapper">
+          <label style="margin-right: 55px" for="anyWords">any of these words:</label>
+          <input class="advanced-search-form" type="text" id="anyWords">
+        </div>
+        
+        <div class="label_input_wrapper">
+          <label  style="margin-right: 45px" for="noneWords">none of these words:</label>
+          <input class="advanced-search-form" type="text" id="noneWords">
+        </div> 
+
+        <div>   
+        <button class="advanced-btn" onclick="advancedSearch()">Advanced Search</button>
+        </div>
+          
+    </div>
+
+  </div>
+
+  <script>
+    function advancedSearch() {
+      const allWords = document.getElementById("allWords").value;
+      const exactPhrase = document.getElementById("exactPhrase").value;
+      const anyWords = document.getElementById("anyWords").value;
+      const noneWords = document.getElementById("noneWords").value;
+      
+      const query = `${allWords}+${exactPhrase}+${anyWords}+${noneWords}`;
+
+      window.location.href = `https://www.google.com/search?q=${query}`; 
+     
+    }
+     
+  </script>
+  
+</body>
+</html>
